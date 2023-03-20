@@ -1,0 +1,5 @@
+mixin _img(name, isSvg=false)
+    if isSvg
+        img(src=require(`../img/svg/${name}.svg`))
+    else 
+        img(src=require(`../img/${name}.png`) srcset=require(`../img/${name}.png`) + " 1x, " + require(`../img/${name}x2.png`) + " 2x")

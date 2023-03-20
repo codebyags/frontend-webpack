@@ -1,0 +1,62 @@
+// Mixins
+include chunks/_img
+include chunks/_picture
+include chunks/_img_lazy
+include chunks/_img_url
+
+
+// Body
+include chunks/_head
+body
+  .container
+    h1 Тестирование проекта сборщика!
+    p.green Блок зелёный - стили работают
+    p Блок с бекграундом .png
+    .bg_block_1
+
+    p Изображение в img .png + srcset
+    +_img('logo')
+
+    p Изображение в picture .png & .webp + srcset
+    +_picture('logo')
+
+    p Изображение в img .svg
+    +_img('logo', true)
+
+    p Блок с бекграундом .png + image-set
+    .bg_block_2 
+
+    p.font Подключен шрифт - bold Gilroy
+
+    p.lazyblock LazyLoad - скроль вниз для проверки изображений
+
+    p Изображение LazyLoad
+    +_img_url("https://upside.pro/img/lab/a-head.svg", true)
+
+
+    p Swiperjs 
+    .swiper#js-test-slider
+      .swiper-wrapper
+        .swiper-slide  
+          +_img_url("https://via.placeholder.com/468x300?text=Slide+1")
+        .swiper-slide
+          +_img_url("https://via.placeholder.com/468x300?text=Slide+2")
+        .swiper-slide
+          +_img_url("https://via.placeholder.com/468x300?text=Slide+3")
+        .swiper-slide
+          +_img_url("https://via.placeholder.com/468x300?text=Slide+4")
+        .swiper-slide
+          +_img_url("https://via.placeholder.com/468x300?text=Slide+5")
+      
+      .swiper-pagination#js-test-slider-pagination
+
+      .swiper-button-prev
+      .swiper-button-next
+
+      .swiper-scrollbar
+
+    p#my-sticky-element-trigger GSAP + Magicscroll - скроль вниз для проверки
+
+    #my-sticky-element
+
+    p.lazyblock

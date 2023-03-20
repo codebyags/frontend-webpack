@@ -1,0 +1,5 @@
+mixin _img_lazy(name, lazy = false, isSvg = false)
+    if isSvg
+        img.lazy(data-src=require(`../img/svg/${name}.svg`))
+    else 
+        img.lazy(data-src=require(`../img/${name}.png`) data-srcset=require(`../img/${name}.png`) + " 1x, " + require(`../img/${name}x2.png`) + " 2x")

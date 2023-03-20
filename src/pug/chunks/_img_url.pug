@@ -1,0 +1,6 @@
+mixin _img_url(url, lazy = false)
+
+    if lazy
+        img.lazy(data-src=url)
+    else 
+        img.lazy(src=url)
